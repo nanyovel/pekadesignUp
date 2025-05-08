@@ -12,7 +12,7 @@ import ImgPisos from "./../../public/img/servicios/piso.png";
 import ImgEflor from "./../../public/img/servicios/eflorescencia.png";
 
 const BotonGeneral = BtnGeneral;
-
+// Prueba
 export default function Servicios() {
   const Services = [
     {
