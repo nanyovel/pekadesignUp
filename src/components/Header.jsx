@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -41,12 +41,12 @@ export default function Header({ userMaster, absolute }) {
   }, [window.screen.width]);
 
   const datosContacto = {
-    tel1: "829-906-9059",
-    tel2: "829-906-0000",
+    tel1: "809-777-3423",
+    tel2: "829-111-0000",
     linkWhta1:
-      "https://api.whatsapp.com/send?phone=+18299069059&text=Hola%20equipo%20BreakKoi,%20quisiera%20por%20favor%20ser%20asistido.",
+      "https://api.whatsapp.com/send?phone=+18097773423&text=Hola%20equipo%20de%20Peka%20Design,%20quisiera%20por%20favor%20ser%20asistido.",
     linkWhta2:
-      "https://api.whatsapp.com/send?phone=+18299069059&text=Hola%20equipo%20BreakKoi,%20quisiera%20por%20favor%20ser%20asistido.",
+      "https://api.whatsapp.com/send?phone=+18097773423&text=Hola%20equipo%20de%20Peka%20Design,%20quisiera%20por%20favor%20ser%20asistido.",
   };
   const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -67,13 +67,13 @@ export default function Header({ userMaster, absolute }) {
                   {datosContacto.tel1}
                 </Ancla>
               </TextoTel>
-              <TextoTel className="tel">
+              {/* <TextoTel className="tel">
                 <Ancla target="_blank" href={datosContacto.linkWhta2}>
                   <Icono icon={faWhatsapp} />
                   <SpanTel>Tel:</SpanTel>
                   {datosContacto.tel2}
                 </Ancla>
-              </TextoTel>
+              </TextoTel> */}
             </WrapTel>
           </CajaInternaHeader>
           <CajaInternaHeader className={menuOpen ? "nav open" : "nav"}>
@@ -96,91 +96,56 @@ export default function Header({ userMaster, absolute }) {
                   Home
                 </Enlaces>
               </NavItem>
-              <NavItem
-                className="idioma"
-                onClick={() => setHasIdioma(!hasIdioma)}
-              >
-                Idiomas
-                <CajaArrowVIcon>
-                  <IconoAngleV width="1rem" />
-                </CajaArrowVIcon>
-                {hasIdioma && (
-                  <CajaIdiomas ref={menuRef}>
-                    <Lista>
-                      <Item>
-                        <ImgFlag src={ImgSpain} />
-                        Español
-                      </Item>
-                      <Item>
-                        {" "}
-                        <ImgFlag src={ImgInglaterra} />
-                        Ingles
-                      </Item>
-                      <Item>
-                        {" "}
-                        <ImgFlag src={ImgFrancia} />
-                        Frances
-                      </Item>
-                    </Lista>
-                  </CajaIdiomas>
-                )}
-              </NavItem>
-              <NavItem>
-                <Enlaces className={"menu"} to={"/propiedades"}>
-                  Propiedades
-                </Enlaces>
-              </NavItem>
-              <NavItem>
-                <Enlaces className={"menu"} to={"/blog"}>
-                  Blog
-                </Enlaces>
-              </NavItem>
-              <NavItem>
+
+              {/* <NavItem>
                 <Enlaces className={"menu"} to={"/contactos"}>
                   Contactos
                 </Enlaces>
-              </NavItem>
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <Enlaces className={"menu"} to={"/nosotros"}>
                   Sobre nosotros
                 </Enlaces>
-              </NavItem>
+              </NavItem> */}
             </NavList>
-            {!userMaster && (
-              <CajaLog>
-                <Enlaces className={"menu login"} to={"/login"}>
-                  <Icono className="user" icon={faUser} />
-                  <TextRegistrarse>Iniciar Sesion</TextRegistrarse>
-                </Enlaces>
-                {/* <TextoSingle>Login</TextoSingle> */}
-              </CajaLog>
-            )}
-            {userMaster && (
-              <Enlaces className={"perfil"} to={"/perfil"}>
-                <CajaPerfil>
-                  {userMaster.urlFotoPerfil ? (
-                    <CajaAvatar>
-                      <ImgAvatar src={userMaster.urlFotoPerfil} />
-                    </CajaAvatar>
-                  ) : (
-                    <CajaAvatar>
-                      <ImgAvatar
-                        className="icon"
-                        src={
-                          userMaster.genero == "Femenino"
-                            ? theme.config.userFemale
-                            : theme.config.userMale
-                        }
-                      />
-                    </CajaAvatar>
-                  )}
-
-                  <CajaNombrePerfil>
-                    <NombrePerfil>{userMaster.nombre}</NombrePerfil>
-                  </CajaNombrePerfil>
-                </CajaPerfil>
-              </Enlaces>
-            )}
+            {
+              // !userMaster && (
+              //   <CajaLog>
+              //     <Enlaces className={"menu login"} to={"/login"}>
+              //       <Icono className="user" icon={faUser} />
+              //       <TextRegistrarse>Iniciar Sesion</TextRegistrarse>
+              //     </Enlaces>
+              //     {/* <TextoSingle>Login</TextoSingle> */}
+              //   </CajaLog>
+              // )
+            }
+            {
+              // userMaster && (
+              //   <Enlaces className={"perfil"} to={"/perfil"}>
+              //     <CajaPerfil>
+              //       {userMaster.urlFotoPerfil ? (
+              //         <CajaAvatar>
+              //           <ImgAvatar src={userMaster.urlFotoPerfil} />
+              //         </CajaAvatar>
+              //       ) : (
+              //         <CajaAvatar>
+              //           <ImgAvatar
+              //             className="icon"
+              //             src={
+              //               userMaster.genero == "Femenino"
+              //                 ? theme.config.userFemale
+              //                 : theme.config.userMale
+              //             }
+              //           />
+              //         </CajaAvatar>
+              //       )}
+              //       <CajaNombrePerfil>
+              //         <NombrePerfil>{userMaster.nombre}</NombrePerfil>
+              //       </CajaNombrePerfil>
+              //     </CajaPerfil>
+              //   </Enlaces>
+              // )
+            }
           </CajaInternaHeader>
         </NavBar>
         {!menuOpen && (
@@ -205,6 +170,7 @@ export default function Header({ userMaster, absolute }) {
 const ContenedorHeader = styled.header`
   /* background-color: ${theme.primary.turquoise}; */
   background-color: rgba(26, 188, 156, 0.8);
+  background-color: ${Theme.primary.azulPeka};
   width: 100vw;
   color: ${theme.primary.white};
   /* padding: 16px; */

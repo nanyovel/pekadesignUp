@@ -68,35 +68,23 @@ export default function MasterRoutes({
       {/* <BotonQuery currentUser={currentUser} /> */}
       <Routes>
         <Route path="/" element={<Home userMaster={userMaster} />} />
-        <Route
-          path="/propiedades/"
-          element={<ListaPropiedades userMaster={userMaster} />}
-        />
-        <Route
-          path="/propiedades/:id"
-          element={<DetalleVilla userMaster={userMaster} />}
-        />
-        <Route path="/blog/" element={<ListaBlog />} />
-        <Route
-          path="/blog/*"
-          element={<DetalleBlog2 userMaster={userMaster} />}
-        />
-        <Route
+
+        {/* <Route
           path="/contactos/"
           element={<PageContact userMaster={userMaster} />}
-        />
-        <Route
+        /> */}
+        {/* <Route
           path="/admin/*"
           element={
             <Manager setDBUsuarios={setDBUsuarios} dbUsuarios={dbUsuarios} />
           }
-        />
+        /> */}
 
         {/* Auth */}
-        <Route path="/login/" element={<Login />} />
-        <Route path="/registro/" element={<Registrarse />} />
+        {/* <Route path="/login/" element={<Login />} /> */}
+        {/* <Route path="/registro/" element={<Registrarse />} /> */}
         <Route path="/nosotros/" element={<Nosotros />} />
-        <Route
+        {/* <Route
           path="/perfil/"
           element={
             <RutaProtegida>
@@ -107,7 +95,7 @@ export default function MasterRoutes({
         <Route
           path="/recuperar/"
           element={<ResetPassword userMaster={userMaster} />}
-        />
+        /> */}
         <Route path="*" element={<Page404 />} />
       </Routes>
 

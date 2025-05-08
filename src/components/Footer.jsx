@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 import ImgLogo from "./../../public/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,11 +21,11 @@ export default function Footer() {
               <Img src={ImgLogo} />
             </Enlaces>
             <TituloLogo>
-              Break
-              <Span>Koi</Span>
+              Peka
+              <Span>Design</Span>
             </TituloLogo>
           </CajaTituloLogo>
-          <Subtitulo>Punta Cana te espera...</Subtitulo>
+          <Subtitulo>Diseños acusticos...</Subtitulo>
           <CajaRRSS>
             <Icono icon={faYoutube} />
             <Icono icon={faInstagram} />
@@ -39,12 +39,7 @@ export default function Footer() {
           <TituloUbicaciones>
             <Enlaces to={"/"}>Home</Enlaces>
           </TituloUbicaciones>
-          <TituloUbicaciones>
-            <Enlaces to={"/propiedades"}>Propiedades</Enlaces>
-          </TituloUbicaciones>
-          <TituloUbicaciones>
-            <Enlaces to={"/blog"}>Blog</Enlaces>
-          </TituloUbicaciones>
+
           <TituloUbicaciones>
             <Enlaces to={"/nosotros"}>Sobre nosotros</Enlaces>
           </TituloUbicaciones>
@@ -54,7 +49,7 @@ export default function Footer() {
         </CajitaInterna>
       </CajaInterna>
       <CajaInterna>
-        <MapaGoogle src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88123.52356083777!2d-68.44282069518056!3d18.679237839687854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea891645dcbfe77%3A0x61881cfaed12f6f3!2s23000%20Punta%20Cana!5e0!3m2!1ses-419!2sdo!4v1733595663469!5m2!1ses-419!2sdo"></MapaGoogle>
+        <MapaGoogle src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8774143012724!2d-69.9805887250378!3d18.48921108259831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8a15284e4fe9%3A0x76f4b20a4f16a7dd!2sCarrefour%20Hipermercado!5e0!3m2!1ses-419!2sdo!4v1746667856151!5m2!1ses-419!2sdo"></MapaGoogle>
       </CajaInterna>
     </ContenedorFooter>
   );
@@ -154,7 +149,8 @@ const Span = styled.span`
 `;
 
 const Subtitulo = styled.h2`
-  color: ${theme.secondary.coral};
+  color: ${Theme.secondary.turquesaBrillante};
+  color: white;
   margin-bottom: 20px;
   @media screen and (max-width: 900px) {
     font-size: 1.1rem;
@@ -181,15 +177,16 @@ const CajaRRSS = styled.div`
 const Icono = styled(FontAwesomeIcon)`
   font-size: 2rem;
 
-  color: ${theme.primary.turquoise};
+  color: ${Theme.secondary.azulBrillante};
   cursor: pointer;
   border: 2px solid;
   padding: 5px;
   border-radius: 4px;
   transition: ease 0.4s;
   &:hover {
-    background-color: ${theme.primary.neutral300};
+    background-color: ${Theme.secondary.azulBrillante};
     color: ${theme.primary.neutral600};
+    color: white;
   }
   @media screen and (max-width: 900px) {
     font-size: 1.5rem;

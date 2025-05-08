@@ -1,46 +1,47 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
-// import ContenedorPrincipal from "../components/ContenedorPrincipal";
+import { Theme, theme } from "../config/theme";
 import Header from "../components/Header";
-import ImgVilla1 from "./../assets/store/villa1.jpg";
-import ImgVilla2 from "./../assets/store/villa2.jpg";
-import ImgVilla3 from "./../assets/store/villa3.jpg";
-import ImgVilla4 from "./../assets/store/villa4.jpg";
-import ImgVilla5 from "./../assets/store/villa5.jpg";
-import ImgVilla6 from "./../assets/store/villa6.jpg";
-import ImgNinniaPool from "./../assets/store/ninniaPool.png";
+
+import ImgEstructura1 from "./../../public/img/hero/facade-7868160_640.jpg";
+import ImgEstructura2 from "./../../public/img/hero/statue-5597502_1280.jpg";
+import ImgEstructura3 from "./../../public/img/hero/steel-scaffolding-4459235_1280.jpg";
+import ImgEstructura4 from "./../../public/img/hero/indoor-3315464_1280.jpg";
+import ImgEstructura6 from "./../../public/img/hero/office-730681_1280.jpg";
+import ImgEstructura7 from "./../../public/img/hero/house-1477041_1280.jpg";
+import ImgEstructura8 from "./../../public/img/hero/hamburg-8573427_1280.jpg";
 import ImgWorkRead from "./../../public/img/trabajoEscrito.jpg";
-import ImgGirlPool from "./../../public/img/girlPool.jpg";
+import ImgKitchen from "./../../public/img/quienesSomos/kitchen-2165756_1280.jpg";
+import ImgHome from "./../../public/img/quienesSomos/home-2486092_1280.jpg";
+import ImgBuildingRect from "./../../public/img/quienesSomos/building-8373618_1920.jpg";
 import ImgKidPool from "./../../public/img/kidPool.jpg";
+import ImgKitheMajes from "./../../public/img/quienesSomos/kitchen-2400367_1920.jpg";
 import ImgMujerPlaya from "./../../public/img/mujerPlaya.svg";
 import Carrusel from "../components/Carrusel";
 import CardPropiedades from "../components/CardPropiedades";
 import FormContact from "../components/FormContact";
 import CardResennia from "../components/CardResennia";
-import RostroMujer1 from "./../../public/img/rostroMujer1.jpg";
-import RostroMujer2 from "./../../public/img/rostroMujer2.jpg";
-import RostroHombre1 from "./../../public/img/rostroHombre1.jpg";
-import EEUU from "./../../public/img/estados-unidos.png";
-import ALEMANIA from "./../../public/img/alemania.png";
-import CANADA from "./../../public/img/canada.png";
-import wave from "./../../public/img/wave.svg";
-import CardBlog from "../components/SeccionBlog";
+import RostroMujer1 from "./../../public/img/quienesSomos/woman-659352_640.jpg";
+import RostroHombre2 from "./../../public/img/quienesSomos/businessman-6039904_640.jpg";
+import RostroHombre1 from "./../../public/img/quienesSomos/executive-6922418_640.jpg";
+
 import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router";
 import { BtnGeneral } from "../components/ElementosGenerales";
 import { Villas } from "../DB/Villas";
-import { fetchGetDocs, fetchGetDocsLimit } from "../libs/FetchFirebase";
+import { fetchGetDocs } from "../libs/FetchFirebase";
 import { useAuth } from "../context/AuthContext";
+import Servicios from "../components/Servicios";
 
 export default function Home({ userMaster }) {
   const arrayImg = [
-    ImgVilla1,
-    ImgVilla2,
-    ImgVilla3,
-    ImgVilla4,
-    ImgVilla5,
-    ImgVilla6,
+    ImgEstructura1,
+    ImgEstructura2,
+    ImgEstructura3,
+    ImgEstructura4,
+    ImgEstructura6,
+    ImgEstructura7,
+    ImgEstructura8,
   ];
   const navigate = useNavigate();
   const goProperty = () => {
@@ -61,32 +62,26 @@ export default function Home({ userMaster }) {
     {
       puntuacion: 4,
       avatarUser: RostroHombre1,
-      nacionalidad: {
-        siglas: "US",
-      },
-      nombre: "Nolan Sandler",
+      rol: "Gerente Coca Cola",
+      nombre: "Daniel Ramos",
       texto:
-        "Este sitio me encanta, es la tarcera vez que voy y no sera la ultima.",
+        "Trabajar con Peka Design fue una experiencia excepcional. Supieron interpretar exactamente lo que queríamos y lo llevaron a otro nivel. Su atención al detalle, la estética y la funcionalidad fue impresionante.",
     },
     {
       puntuacion: 5,
       avatarUser: RostroMujer1,
-      nacionalidad: {
-        siglas: "CA",
-      },
-      nombre: "Mirian Smith",
+      rol: "Propietaria Cielos Acusticos",
+      nombre: "Yaritza Martinez",
       texto:
-        "Me encanto el lugar, todo limpio, ordenado, buen ambiente y la ubicacion geografica es lo maravilloso del sitio.",
+        "La innovación y el profesionalismo de Peka Design superaron nuestras expectativas. Nos acompañaron durante todo el proceso con una comunicación clara y soluciones creativas. Sin duda, volveríamos a elegirlos.",
     },
     {
       puntuacion: 4,
-      avatarUser: RostroMujer2,
-      nacionalidad: {
-        siglas: "GB",
-      },
-      nombre: "Mary Diaz",
+      avatarUser: RostroHombre2,
+      rol: "Director UASD",
+      nombre: "Angelo Sosa",
       texto:
-        "Mi esposo y mis hijos quedaron encantado con el lugar y la zona, siempre es un placer visitar Punta Cana.",
+        "Desde el primer contacto, sentimos que nuestro proyecto estaba en buenas manos. El equipo de Peka Design no solo cumplió con los tiempos y el presupuesto, sino que nos entregó un resultado espectacular. Totalmente recomendados.",
     },
   ];
   const user = useAuth();
@@ -101,90 +96,22 @@ export default function Home({ userMaster }) {
           </ContainerHero>
           <CajaTitulo>
             <TituloH1>
-              Break
-              <Span>Koi</Span>
+              Peka
+              <Span>Design</Span>
             </TituloH1>
-            <Subtitulo>Punta Cana te espera...</Subtitulo>
-            <BtnSimple className="ctaMain" onClick={() => goProperty()}>
-              Reservar
-            </BtnSimple>
+            <Subtitulo>Diseños acusticos</Subtitulo>
           </CajaTitulo>
-          <CajaWave>
-            <ImgWave src={wave} />
-          </CajaWave>
         </ContainerHeader>
-        <BarraPieHero>
-          <TituloPieHero>
-            ¿Preocupado por el Wi-Fi? Aquí solo necesitas conectarte con el sol
-            y el mar.
-          </TituloPieHero>
-        </BarraPieHero>
+        <CajaAbreBocas>
+          <TituloSeccion className="coral">Servicios</TituloSeccion>
+          <Servicios />
+        </CajaAbreBocas>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <ContainerSemi>
-          <WrapSeccion>
-            <WrapSeccionInternal>
-              <Seccion className="video">
-                <CajaVideo>
-                  <CajaInternaVideo className="izquierda">
-                    <TituloH2Video>
-                      Break Koi: Una escapada de lujo en Punta Cana.
-                    </TituloH2Video>
-                    <ParrafoVideo>
-                      Descubre la exclusividad de <b> Break Koi</b>, un refugio
-                      de lujo en <b> Punta Cana </b>donde el confort y la
-                      elegancia se fusionan con la belleza del Caribe. Cada una
-                      de nuestras villas tiene su propio encanto y está diseñada
-                      para brindarte privacidad, tranquilidad y experiencias
-                      inolvidables. Relájate en una piscina privada, disfruta de
-                      una cena con vista al mar o explora las paradisíacas
-                      playas de arena blanca.
-                    </ParrafoVideo>
-                    <ParrafoVideo>
-                      En <b> Break Koi</b>, nos encargamos de cada detalle para
-                      que vivas una estancia sin preocupaciones. Nuestro equipo
-                      ofrece un servicio personalizado que hará de tus
-                      vacaciones una experiencia única. Más que un destino,
-                      somos un estilo de vida donde la exclusividad y el
-                      descanso se encuentran en perfecta armonía.
-                    </ParrafoVideo>
-                  </CajaInternaVideo>
-                  <CajaInternaVideo className="derecha">
-                    <CajaYouTube>
-                      <FramYT
-                        src="https://www.youtube.com/embed/S7gJV3Jwmh4?si=2jlzF4_GiNiLP7o0"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      ></FramYT>
-                    </CajaYouTube>
-                  </CajaInternaVideo>
-                </CajaVideo>
-              </Seccion>
-            </WrapSeccionInternal>
-          </WrapSeccion>
-          <Seccion>
-            <TituloSeccion className="sinMarginBottom">
-              Propiedades
-            </TituloSeccion>
-            <SubtituloSeccion>
-              3 villas lujosas, en zonas estrategicas de Punta Cana.
-            </SubtituloSeccion>
-            <WrapPropiedades>
-              {propiedadesDB.length > 0 &&
-                propiedadesDB.map((prop, index) => {
-                  return (
-                    <EnlacePrincipal
-                      className="cardProps"
-                      to={"propiedades/" + prop.url}
-                      key={index}
-                    >
-                      <CardPropiedades prop={prop} />
-                    </EnlacePrincipal>
-                  );
-                })}
-            </WrapPropiedades>
-          </Seccion>
           <Seccion>
             <TituloSeccion>Sobre nosotros</TituloSeccion>
 
@@ -193,33 +120,32 @@ export default function Home({ userMaster }) {
                 <TituloLess>¿Quienes somos?</TituloLess>
                 <br />
                 <Parrafo>
-                  En <b>Break Koi,</b> ofrecemos una colección exclusiva de
-                  villas en <b>Punta Cana,</b> diseñadas para brindar lujo,
-                  seguridad y comodidad en un entorno paradisíaco. Nos apasiona
-                  crear experiencias únicas para nuestros huéspedes, con
-                  alojamientos elegantes y servicios personalizados que
-                  garantizan una estadía inolvidable. Nuestro compromiso es
-                  seguir creciendo y adquiriendo nuevas propiedades para ofrecer
-                  siempre lo mejor en hospitalidad.
+                  En <b>Peka Design</b> somos una empresa de diseño y
+                  construcción que nace con una visión clara: transformar
+                  espacios a través de la creatividad, la tecnología y el
+                  detalle. Nuestro enfoque combina la sensibilidad artística del
+                  diseño con la precisión técnica de la construcción moderna,
+                  dando vida a proyectos únicos que responden tanto a las
+                  necesidades funcionales como a la identidad estética de cada
+                  cliente.
                 </Parrafo>
                 <br />
                 <Parrafo>
-                  Más que un destino, <b>Break Koi,</b> es un espacio donde la
-                  exclusividad se combina con un trato cercano y amigable. Nos
-                  enfocamos en la seguridad, el confort y la atención
-                  personalizada, asegurando que cada huésped se sienta como en
-                  casa. Nuestro objetivo es construir relaciones a largo plazo,
-                  creando momentos memorables que hagan de cada visita una
-                  experiencia para repetir.
+                  Nos mueve la innovación y el compromiso con la calidad. Desde
+                  una fachada impactante hasta un interior cuidadosamente
+                  diseñado, cada obra refleja nuestra pasión por superar
+                  expectativas y construir soluciones que perduren en el tiempo.
+                  En <b>Peka Design</b> , no solo diseñamos estructuras: creamos
+                  experiencias espaciales pensadas para el futuro.
                 </Parrafo>
                 <br />
               </CajaInterna>
               <CajaInterna className="cajaImg">
-                <Img src={ImgWorkRead} />
-                <CajaHover className="hover">
-                  Somos una excelente opcion de alquileres vacacionales en Punta
-                  Cana.
-                </CajaHover>
+                <Img src={ImgKitchen} />
+                <CajaHover className="hover"></CajaHover>
+                <TituloInternoHover className="texto">
+                  Transformación de espacios
+                </TituloInternoHover>
               </CajaInterna>
             </WrapTextoImg>
             <WrapTextoImg className="reverse">
@@ -227,30 +153,32 @@ export default function Home({ userMaster }) {
                 <TituloLess>¿Por que elegirnos?</TituloLess>
                 <br />
                 <Parrafo>
-                  En <b>Break Koi,</b> combinamos lujo, seguridad y hospitalidad
-                  para ofrecerte una experiencia inigualable en Punta Cana.
-                  Nuestras villas elegantes y exclusivas están diseñadas para
-                  brindarte el máximo confort, con espacios cuidadosamente
-                  decorados y amenidades de primera clase. Además, garantizamos
-                  privacidad y tranquilidad en un entorno paradisíaco, ideal
-                  para quienes buscan una escapada perfecta.
+                  En <b>Peka Design</b> no solo ejecutamos proyectos, los
+                  interpretamos, los pensamos contigo y los llevamos más allá de
+                  lo esperado. Nos destacamos por integrar diseño, innovación y
+                  tecnología en cada etapa del proceso, asegurando resultados
+                  que combinan belleza, funcionalidad y eficiencia. Cada detalle
+                  cuenta, y por eso trabajamos con un enfoque personalizado,
+                  comprometido con la excelencia y la satisfacción total de
+                  nuestros clientes.
                 </Parrafo>
                 <br />
                 <Parrafo>
-                  Nos distinguimos por nuestro trato personalizado y atención
-                  cercana a cada huésped. En <b>Break Koi,</b> no solo te
-                  ofrecemos un lugar donde hospedarte, sino un servicio cálido y
-                  amigable que hará que te sientas como en casa. Queremos
-                  construir relaciones a largo plazo, asegurándonos de que cada
-                  visita sea una experiencia única que siempre querrás repetir.
+                  Elegirnos es apostar por un equipo creativo, técnico y
+                  apasionado por lo que hace. Nos adaptamos a las nuevas
+                  tendencias, utilizamos herramientas de vanguardia y mantenemos
+                  una comunicación cercana para que cada proyecto fluya con
+                  claridad y confianza. En <b>Peka Design</b> , hacemos de cada
+                  espacio una expresión auténtica de quienes lo habitan.
                 </Parrafo>
                 <br />
               </CajaInterna>
               <CajaInterna className="cajaImg">
-                <Img src={ImgGirlPool} />
-                <CajaHover className="hover">
-                  Tu refugio perfecto, Punta Cana.
-                </CajaHover>
+                <Img src={ImgHome} />
+                <CajaHover className="hover"></CajaHover>
+                <TituloInternoHover className="texto">
+                  Diseño personalizado
+                </TituloInternoHover>
               </CajaInterna>
             </WrapTextoImg>
           </Seccion>
@@ -259,61 +187,64 @@ export default function Home({ userMaster }) {
               <CajaParallax></CajaParallax>
               <BarraParallax className="top">
                 <TituloParallax>
-                  El único estrés aquí es decidir entre playa o piscina.
+                  Peka Design: Donde la creatividad se encuentra con la
+                  tecnología.
                 </TituloParallax>
               </BarraParallax>
               <BarraParallax className="bottom">
                 <TituloParallax>
-                  Ven por las vistas, quédate por la paz mental.
+                  Transformamos lo común en extraordinario.
                 </TituloParallax>
               </BarraParallax>
             </SeccionParralla>
           </Seccion>
           <Seccion>
-            <TituloSeccion>Lo que nos hace diferentes</TituloSeccion>
+            {/* <TituloSeccion>Lo que nos hace diferentes</TituloSeccion> */}
             <WrapTextoImg className="reverse svgPlaya">
               <CajaInterna className="texto">
                 <CajaRazon>
-                  <TituloLess>Factor diferenciador</TituloLess>
+                  <TituloLess className="azulPeka">Pilares</TituloLess>
                   <ListaRazon className="noListStyle">
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Exclusividad y lujo: </b> Villas elegantes que
-                        ofrecen privacidad, confort y un ambiente único en Punta
-                        Cana
+                        <b>Innovación constante: </b> Aplicamos ideas creativas
+                        y tecnología de punta en cada proyecto.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Servicio personalizado:</b> Atención adaptada a las
-                        necesidades individuales de cada huésped, creando
-                        estancias memorables.
+                        <b>Diseño con propósito:</b> Cada espacio responde a una
+                        necesidad, estética y funcionalmente.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Compromiso con la seguridad: </b> Entorno seguro y
-                        confiable para que nuestros huéspedes se sientan
-                        tranquilos y protegidos.
+                        <b>Calidad garantizada:</b> Materiales, procesos y
+                        resultados de alto nivel.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b> Sostenibilidad:</b> Prácticas responsables para
-                        preservar el medio ambiente y mantener la belleza
-                        natural de la zona.
+                        <b>Atención personalizada:</b> Escuchamos y acompañamos
+                        a cada cliente de principio a fin.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Relaciones duraderas:</b> Buscamos crear lazos a
-                        largo plazo con nuestros huéspedes, convirtiéndolos en
-                        parte de nuestra familia.
+                        <b>Sostenibilidad:</b> Promovemos prácticas responsables
+                        y soluciones conscientes.
+                      </ElementosRazon>
+                    </WrapElementList>
+                    <WrapElementList>
+                      <ListStyle>✅</ListStyle>
+                      <ElementosRazon>
+                        <b>Precisión técnica:</b> Combinamos creatividad con
+                        rigurosidad constructiva.
                       </ElementosRazon>
                     </WrapElementList>
                   </ListaRazon>
@@ -321,57 +252,76 @@ export default function Home({ userMaster }) {
 
                 <br />
                 <CajaRazon>
-                  <TituloLess>Nuestros valores</TituloLess>
+                  <TituloLess className="azulPeka">Nuestros valores</TituloLess>
                   <ListaRazon className="noListStyle">
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Exclusividad: </b> Nos comprometemos a ofrecer villas
-                        únicas, elegantes y de lujo, asegurando una experiencia
-                        exclusiva para cada uno de nuestros huéspedes.
+                        <b> Compromiso:</b> Cumplimos con lo que prometemos,
+                        cuidando cada detalle y cada plazo.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Seguridad:</b> Priorizamos la seguridad y
-                        tranquilidad de nuestros clientes, brindando un ambiente
-                        confiable y protegido en todo momento.
+                        <b>Transparencia:</b> Nos comunicamos con claridad y
+                        honestidad en todo momento.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Hospitalidad: </b> Creemos en el poder de un trato
-                        personalizado y cercano. Nos aseguramos de que cada
-                        huésped se sienta bienvenido y atendido desde su
-                        llegada.
+                        <b>Pasión por el diseño:</b> Amamos lo que hacemos, y
+                        eso se refleja en cada proyecto.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b> Crecimiento:</b> Nos esforzamos por seguir creciendo
-                        y ampliando nuestra oferta de villas, siempre con el
-                        objetivo de ofrecer lo mejor a nuestros clientes.
+                        <b>Excelencia:</b> Buscamos siempre el mejor resultado,
+                        sin conformarnos con lo mínimo.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b>Relaciones a largo plazo:</b> Valoramos la creación
-                        de lazos duraderos con nuestros huéspedes, construyendo
-                        una relación de confianza que vaya más allá de una
-                        simple estadía.
+                        <b>Creatividad:</b>Transformamos ideas en soluciones
+                        únicas y funcionales.
                       </ElementosRazon>
                     </WrapElementList>
                     <WrapElementList>
                       <ListStyle>✅</ListStyle>
                       <ElementosRazon>
-                        <b> Sostenibilidad: </b>Estamos comprometidos con el
-                        respeto al medio ambiente, implementando prácticas
-                        responsables y sostenibles en la gestión de nuestras
-                        villas para preservar la belleza natural de Punta Cana.
+                        <b>Trabajo en equipo:</b>Creemos en la colaboración como
+                        base de todo gran resultado.
+                      </ElementosRazon>
+                    </WrapElementList>
+                    <WrapElementList>
+                      <ListStyle>✅</ListStyle>
+                      <ElementosRazon>
+                        <b>Responsabilidad:</b>Actuamos con seriedad y respeto
+                        en cada decisión y acción.
+                      </ElementosRazon>
+                    </WrapElementList>
+                    <WrapElementList>
+                      <ListStyle>✅</ListStyle>
+                      <ElementosRazon>
+                        <b>Empatía con el cliente:</b>Escuchamos, entendemos y
+                        diseñamos pensando en ti.
+                      </ElementosRazon>
+                    </WrapElementList>
+                    <WrapElementList>
+                      <ListStyle>✅</ListStyle>
+                      <ElementosRazon>
+                        <b>Adaptabilidad:</b>Nos ajustamos a tus necesidades,
+                        ideas y cambios con flexibilidad.
+                      </ElementosRazon>
+                    </WrapElementList>
+                    <WrapElementList>
+                      <ListStyle>✅</ListStyle>
+                      <ElementosRazon>
+                        <b>Respeto por cada proyecto:</b>Valoramos cada obra
+                        como si fuera propia, sin importar su tamaño.
                       </ElementosRazon>
                     </WrapElementList>
                   </ListaRazon>
@@ -380,7 +330,7 @@ export default function Home({ userMaster }) {
                 <br />
               </CajaInterna>
               <CajaInterna className="cajaImg svgPlaya">
-                <Img src={ImgMujerPlaya} className="svg" />
+                <Img src={ImgBuildingRect} className="svg" />
               </CajaInterna>
             </WrapTextoImg>
           </Seccion>
@@ -393,18 +343,11 @@ export default function Home({ userMaster }) {
             </WrapTextoImg>
           </Seccion>
         </ContainerSemi>
-        <CajaBlog>
-          <Seccion>
-            <TituloSeccion className="coral">Noticias (Blog)</TituloSeccion>
-            <WrapTextoImg className="noticias">
-              <CardBlog />
-            </WrapTextoImg>
-          </Seccion>
-        </CajaBlog>
-        <Seccion>
+
+        {/* <Seccion>
           <TituloSeccion>Envianos un mensaje</TituloSeccion>
           <FormContact userMaster={userMaster} />
-        </Seccion>
+        </Seccion> */}
       </Container2>
       <Footer />
     </>
@@ -442,25 +385,7 @@ const ContainerSemi = styled.div`
     padding-right: 20px;
   }
 `;
-const CajaBlog = styled.div`
-  padding-left: ${theme.config.paddingLateral};
-  padding-right: ${theme.config.paddingLateral};
-  background-color: ${theme.primary.turquoise};
-  padding: 80px ${theme.config.paddingLateral};
-  margin-bottom: 50px;
-  @media screen and (max-width: 750px) {
-    padding-left: ${theme.config.paddingLateral70};
-    padding-right: ${theme.config.paddingLateral70};
-  }
-  @media screen and (max-width: 650px) {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  @media screen and (max-width: 550px) {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-`;
+
 // ***** HERO ******
 const ContainerHeader = styled.div`
   position: relative;
@@ -490,10 +415,11 @@ const ContainerHero = styled.div`
 const CajaTitulo = styled.div`
   border: 1px solid red;
   min-width: 30%;
-  min-height: 30vh;
+  min-height: 20vh;
+  padding: 8px;
   position: absolute;
   top: 50vh;
-  right: 100px;
+  left: 100px;
   z-index: 2;
   border: 2px solid ${theme.primary.turquoise};
   background-color: ${theme.primary.neutral300};
@@ -503,6 +429,22 @@ const CajaTitulo = styled.div`
   -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
   padding-left: 15px;
+  background-color: ${Theme.primary.azulPeka};
+  border: 2px solid ${Theme.primary.verdePeka};
+  border-color: black;
+  transition: ease all 0.1s;
+  &:hover {
+    transform: scale(1.02);
+  }
+  animation: cambiarColor 0.2s infinite alternate;
+  @keyframes cambiarColor {
+    from {
+      border-color: ${Theme.primary.azulPeka};
+    }
+    to {
+      border-color: ${Theme.primary.verdePeka};
+    }
+  }
   @media screen and (max-width: 1300px) {
     padding: 4px;
   }
@@ -525,7 +467,8 @@ const TituloH1 = styled.h1`
   font-size: 6rem;
   color: ${theme.primary.turquoise};
   padding: 0;
-  font-weight: lighter;
+  /* font-weight: lighter; */
+  color: white;
   @media screen and (max-width: 620px) {
     font-size: 5rem;
   }
@@ -543,6 +486,7 @@ const Span = styled.span`
 `;
 const Subtitulo = styled.h2`
   color: ${theme.secondary.coral};
+  color: white;
   @media screen and (max-width: 460px) {
     font-size: 1.2rem;
   }
@@ -550,123 +494,8 @@ const Subtitulo = styled.h2`
     font-size: 1rem;
   }
 `;
-
-// ***** RESTO CONTENIDO ******
-const BarraPieHero = styled.div`
-  margin-bottom: 120px;
-  background-color: ${theme.primary.turquoiseTenue};
-  width: 100%;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-`;
-
-const TituloPieHero = styled.h2`
-  color: ${theme.primary.turquoise};
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  align-content: center;
-  font-size: 2.5rem;
-  color: white;
-  padding: 0 20px;
-  @media screen and (max-width: 700px) {
-    font-size: 2rem;
-  }
-  @media screen and (max-width: 550px) {
-    font-size: 1.4rem;
-  }
-  @media screen and (max-width: 500px) {
-    font-size: 1.1rem;
-  }
-`;
-const CajaVideo = styled.div`
-  min-height: 300px;
-  height: 100%;
-  display: flex;
-  border-radius: 15px;
-  background-color: white;
-  overflow: hidden;
-  -moz-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 3px 7px 11px 0px rgba(0, 0, 0, 0.75);
-  @media screen and (max-width: 1350px) {
-    display: flex;
-    flex-direction: column;
-  }
-  @media screen and (max-width: 620px) {
-    /* background-color: red; */
-  }
-`;
-const CajaInternaVideo = styled.div`
-  min-height: 300px;
-  padding: 20px 40px;
-  &.izquierda {
-    width: auto;
-    align-items: center;
-    overflow-y: scroll;
-    @media screen and (max-width: 1350px) {
-      overflow: auto;
-    }
-    @media screen and (max-width: 440px) {
-      overflow: auto;
-      padding: 15px 20px;
-    }
-  }
-  &.derecha {
-    box-shadow: 0 2px 20px #0003;
-    padding: 15px 25px;
-    display: flex;
-    justify-content: center;
-    width: auto;
-    align-items: center;
-  }
-`;
-const CajaYouTube = styled.div`
-  box-shadow: 0 2px 20px #0003;
-  /* width: 80%; */
-  /* border: 1px solid red; */
-`;
-const FramYT = styled.iframe`
-  width: 560px;
-  height: 315px;
-  @media screen and (max-width: 1350px) {
-    overflow: auto;
-    width: 448px;
-    height: 252px;
-  }
-  @media screen and (max-width: 620px) {
-    width: 403px;
-    height: 226px;
-  }
-  @media screen and (max-width: 520px) {
-    width: 362px;
-    height: 203px;
-  }
-  @media screen and (max-width: 430px) {
-    width: 325px;
-    height: 183px;
-  }
-`;
-const TituloH2Video = styled.h2`
-  text-align: center;
-  color: ${theme.primary.turquoise};
-  color: black;
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 15px;
-  @media screen and (max-width: 620px) {
-    font-size: 2rem;
-  }
-`;
-const ParrafoVideo = styled.p`
-  color: ${theme.primary.neutral600};
-  font-size: 18px;
-  margin-bottom: 15px;
-  line-height: 1.6rem;
-`;
 const TituloSeccion = styled.h2`
-  color: ${theme.primary.turquoiseTenue};
+  color: ${Theme.primary.azulPeka};
   width: 100%;
   text-align: center;
   font-size: 2.5rem;
@@ -702,6 +531,10 @@ const BtnSimple = styled(BtnGeneral)``;
 const TituloLess = styled.h3`
   font-size: 1.8rem;
   color: ${theme.secondary.coral};
+  color: ${Theme.primary.verdePeka};
+  &.azulPeka {
+    color: ${Theme.primary.azulPeka};
+  }
 `;
 const WrapTextoImg = styled.div`
   display: flex;
@@ -753,8 +586,13 @@ const CajaInterna = styled.div`
     overflow: hidden;
     border-radius: 5px;
     width: 40%;
+
     &:hover .hover {
-      transform: translateX(0%);
+      visibility: visible;
+      opacity: 0.8;
+    }
+    &:hover .texto {
+      left: 0;
     }
     /* width: 30%; */
     /* width: ; */
@@ -797,31 +635,19 @@ const CajaHover = styled.div`
   height: 100%;
   position: absolute;
   font-weight: 600;
-  background-color: #dc143c8c;
+  background-color: ${Theme.primary.verdePeka};
+  background-color: #2ba58d9e;
   padding: 10px;
   left: 0;
   top: 0;
-  transform: translateX(100%);
-  transition: transform ease-in-out 0.3s;
-`;
-
-const CajaWave = styled.div`
-  position: absolute;
-  bottom: -100px;
-  width: 100%;
-`;
-const ImgWave = styled.img`
-  position: absolute;
-  bottom: -5px;
-`;
-
-const WrapPropiedades = styled.div`
   display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
+  align-items: center;
+  transition: all ease-in-out 0.4s;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
 `;
 
 const Seccion = styled.section`
@@ -846,43 +672,6 @@ const Seccion = styled.section`
   }
 `;
 
-const WrapSeccion = styled.div`
-  height: 800px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-  @media screen and (max-width: 900px) {
-    margin-bottom: 100px;
-  }
-`;
-
-const WrapSeccionInternal = styled.div`
-  height: 60%;
-  margin-bottom: 40px;
-  width: 100vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${theme.secondary.coral};
-  padding-left: ${theme.config.paddingLateral};
-  padding-right: ${theme.config.paddingLateral};
-  @media screen and (max-width: 1350px) {
-    height: 90%;
-  }
-  @media screen and (max-width: 1050px) {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
-  @media screen and (max-width: 620px) {
-    padding: 10px;
-  }
-  @media screen and (max-width: 420px) {
-    padding: 0;
-  }
-`;
 // Parallax
 const SeccionParralla = styled(Seccion)`
   width: 100%;
@@ -896,7 +685,7 @@ const BarraParallax = styled.div`
   align-items: center;
 
   width: 100vw;
-  background-color: ${theme.secondary.coral};
+  background-color: ${Theme.primary.azulPeka};
   position: absolute;
   left: 0;
   &.top {
@@ -910,6 +699,7 @@ const BarraParallax = styled.div`
 `;
 const TituloParallax = styled.h2`
   color: ${theme.primary.turquoise};
+  color: ${Theme.primary.verdePeka};
   width: 100%;
   height: 100%;
   text-align: center;
@@ -933,7 +723,7 @@ const CajaParallax = styled.div`
   position: absolute;
   border: 1px solid red;
   left: 0;
-  background-image: url(${ImgKidPool});
+  background-image: url(${ImgKitheMajes});
   /* Ajuste del fondo */
   background-attachment: fixed;
   background-position: center;
@@ -1005,4 +795,27 @@ const ListStyle = styled.h2`
 const ElementosRazon = styled.li`
   margin-bottom: 8px;
   color: ${theme.primary.neutral600};
+`;
+const CajaAbreBocas = styled.div`
+  width: 100%;
+  min-height: 500px;
+  background-color: ${Theme.primary.azulPeka};
+  padding: 50px;
+  margin-top: 80px;
+`;
+const TituloInternoHover = styled.h2`
+  color: white;
+  opacity: 1;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+  /* height: 100%; */
+  background-color: ${Theme.primary.azulPeka};
+  transition: 0.2s all ease;
+  text-align: center;
+  vertical-align: center;
+  align-content: center;
+  font-size: 2.4rem;
 `;
