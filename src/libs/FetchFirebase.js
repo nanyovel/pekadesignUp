@@ -12,7 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 import db from "../firebase/firebaseConfig";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 // useEffect(() => {
 //   (async () => {
 //     const listaBlogAux = await fetchGetDocsLimit(
@@ -51,7 +51,7 @@ export const useDocById = (collectionName, setState, idUsuario) => {
 };
 
 // ****************** DOCUMENTOS SIN ESCUCHADOR **********************
-export const fetchGetDocs = async (collectionName, condicionesDB) => {
+export const fetchGetDocsw = async (collectionName, condicionesDB) => {
   console.log("DB 😐😐😐😐😐" + collectionName);
   console.log(condicionesDB);
   const q =

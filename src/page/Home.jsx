@@ -10,16 +10,11 @@ import ImgEstructura4 from "./../../public/img/hero/indoor-3315464_1280.jpg";
 import ImgEstructura6 from "./../../public/img/hero/office-730681_1280.jpg";
 import ImgEstructura7 from "./../../public/img/hero/house-1477041_1280.jpg";
 import ImgEstructura8 from "./../../public/img/hero/hamburg-8573427_1280.jpg";
-import ImgWorkRead from "./../../public/img/trabajoEscrito.jpg";
 import ImgKitchen from "./../../public/img/quienesSomos/kitchen-2165756_1280.jpg";
 import ImgHome from "./../../public/img/quienesSomos/home-2486092_1280.jpg";
 import ImgBuildingRect from "./../../public/img/quienesSomos/building-8373618_1920.jpg";
-import ImgKidPool from "./../../public/img/kidPool.jpg";
 import ImgKitheMajes from "./../../public/img/quienesSomos/kitchen-2400367_1920.jpg";
-import ImgMujerPlaya from "./../../public/img/mujerPlaya.svg";
 import Carrusel from "../components/Carrusel";
-import CardPropiedades from "../components/CardPropiedades";
-import FormContact from "../components/FormContact";
 import CardResennia from "../components/CardResennia";
 import RostroMujer1 from "./../../public/img/quienesSomos/woman-659352_640.jpg";
 import RostroHombre2 from "./../../public/img/quienesSomos/businessman-6039904_640.jpg";
@@ -29,11 +24,10 @@ import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router";
 import { BtnGeneral } from "../components/ElementosGenerales";
 import { Villas } from "../DB/Villas";
-import { fetchGetDocs } from "../libs/FetchFirebase";
-import { useAuth } from "../context/AuthContext";
+// import { useAuth } from "../context/AuthContext";
 import Servicios from "../components/Servicios";
 
-export default function Home({ userMaster }) {
+export default function Home() {
   const arrayImg = [
     ImgEstructura1,
     ImgEstructura2,
@@ -50,13 +44,6 @@ export default function Home({ userMaster }) {
   const villaDB = Villas[0];
 
   const [propiedadesDB, setPropiedadesDB] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const listaProps = await fetchGetDocs("propiedades", []);
-      console.log(listaProps);
-      setPropiedadesDB(listaProps);
-    })();
-  }, []);
 
   const reviewStatic = [
     {
@@ -84,11 +71,13 @@ export default function Home({ userMaster }) {
         "Desde el primer contacto, sentimos que nuestro proyecto estaba en buenas manos. El equipo de Peka Design no solo cumplió con los tiempos y el presupuesto, sino que nos entregó un resultado espectacular. Totalmente recomendados.",
     },
   ];
-  const user = useAuth();
-  const currentUser = user.usuario;
+  // const user = useAuth();
+  // const currentUser = user.usuario;
   return (
     <>
-      <Header userMaster={userMaster} currentUser={currentUser} />
+      <Header
+      // currentUser={currentUser}
+      />
       <Container2>
         <ContainerHeader>
           <ContainerHero>
@@ -346,7 +335,6 @@ export default function Home({ userMaster }) {
 
         {/* <Seccion>
           <TituloSeccion>Envianos un mensaje</TituloSeccion>
-          <FormContact userMaster={userMaster} />
         </Seccion> */}
       </Container2>
       <Footer />

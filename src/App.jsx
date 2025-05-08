@@ -7,7 +7,6 @@ import Home from "./page/Home";
 import Footer from "./components/Footer";
 import MasterRoutes from "./routes/MasterRoutes";
 import ScrollToTop from "./components/ScrollTop";
-import { useAuth } from "./context/AuthContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import db from "./firebase/firebaseConfig";
 import BotonQuery from "./components/BotonQuery";
@@ -15,36 +14,14 @@ import { useDocById } from "./libs/FetchFirebase";
 
 function App() {
   // ******************** RECURSOS GENERALES ******************** //
-  // const userAuth = useAuth().userMaster;
   // ******************** RECURSOS GENERALES ******************** //
-  const usuarioAuth = useAuth().usuario;
-
-  const [usuario, setUsuario] = useState(usuarioAuth);
-  const [userMaster, setUserMaster] = useState("");
-  const idUsuario = usuarioAuth ? usuarioAuth.uid : "00";
-
-  useDocById("usuarios", setUserMaster, idUsuario);
-  const [datosParseados, setDatosParseados] = useState(false);
-  console.log(userMaster);
-  useEffect(() => {
-    if (userMaster || userMaster == null) {
-      setDatosParseados(true);
-    }
-  }, [userMaster]);
 
   const [dbUsuarios, setDBUsuarios] = useState([]);
   return (
-    datosParseados && (
-      <>
-        <ScrollToTop />
-
-        <MasterRoutes
-          userMaster={userMaster}
-          setDBUsuarios={setDBUsuarios}
-          dbUsuarios={dbUsuarios}
-        />
-      </>
-    )
+    <>
+      <ScrollToTop />
+      <MasterRoutes setDBUsuarios={setDBUsuarios} dbUsuarios={dbUsuarios} />
+    </>
   );
 }
 
