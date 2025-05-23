@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Theme, theme } from "../config/theme";
 import FormContact from "../components/FormContact";
 import ImgCarta from "../../public/img/carta.png";
+import ImgTypeWriter from "../../public/img/typewriter-1170657_1280.jpg";
 import { TituloSeccion } from "../components/ElementosGenerales";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -22,10 +23,10 @@ export default function PageContact({ userMaster }) {
           </Subtitulo>
         </CajaTitulo>
         <WrapContenido>
-          <FormContact userMaster={userMaster} />
           <CajaImg>
             <Img src={ImgCarta} />
           </CajaImg>
+          <FormContact userMaster={userMaster} />
         </WrapContenido>
       </CajaPrincipal>
       <Footer />
@@ -77,13 +78,25 @@ const WrapContenido = styled.div`
   width: 80%;
   justify-content: center;
   margin: auto;
-  /* border: 1px solid red; */
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: ${Theme.config.sombra};
+  padding: 35px;
+  background-image: linear-gradient(
+      to top,
+      gray 36%,
+      rgba(35, 129, 197, 0.8) 100%
+    ),
+    url("../../public/img/typewriter-1170657_1280.jpg");
   @media screen and (max-width: 950px) {
     flex-direction: column-reverse;
   }
 `;
 const CajaImg = styled.div`
-  width: 40%;
+  width: 20%;
+  margin-bottom: 24px;
   /* border: 1px solid blue; */
   @media screen and (max-width: 950px) {
     width: 100%;

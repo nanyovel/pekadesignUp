@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 import { BtnGeneral } from "./ElementosGenerales";
 import MensajeSchema from "../model/MensajeSchema";
 import { addDoc, collection, Timestamp } from "firebase/firestore";
@@ -21,6 +21,7 @@ export default function FormContact({ userMaster }) {
   };
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
   const enviarMensaje = async () => {
+    return;
     try {
       const docRef = collection(db, "mensajes");
       await addDoc(docRef, {
@@ -98,6 +99,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
   @media screen and (max-width: 600px) {
     min-width: 300px;
     width: 300px;
@@ -111,7 +113,7 @@ const CajaInput = styled.div`
   width: 100%;
 `;
 const TituloInput = styled.p`
-  color: ${theme.complementary.midnightBlue};
+  color: ${Theme.primary.azulPeka};
   /* color: red; */
 `;
 const Input = styled.input`
@@ -121,8 +123,8 @@ const Input = styled.input`
   border: 1px solid #000;
   outline: none;
   padding: 10px;
-  color: ${theme.primary.turquoiseBrillante};
-  background-color: ${theme.complementary.midnightBlue};
+  /* color: ${theme.primary.turquoiseBrillante}; */
+  /* background-color: ${theme.complementary.midnightBlue}; */
 `;
 const TextArea = styled.textarea`
   width: 100%;
@@ -130,14 +132,10 @@ const TextArea = styled.textarea`
   border: 1px solid #000;
   outline: none;
   padding: 5px;
-  color: ${theme.primary.turquoiseBrillante};
-  background-color: ${theme.complementary.midnightBlue};
   min-height: 80px;
   resize: vertical;
 `;
-const BtnSimple = styled(BtnGeneral)`
-  border: 1px solid ${theme.primary.turquoise};
-`;
+const BtnSimple = styled(BtnGeneral)``;
 
 const Parrafo = styled.p`
   color: ${theme.primary.turquoise};

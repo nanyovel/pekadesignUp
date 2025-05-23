@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 import React from "react";
 import { Theme, theme } from "../config/theme";
 
+import { Link } from "react-router";
+
 export const BtnGeneral = styled.button`
   margin: 5px;
   cursor: pointer;
@@ -12,15 +14,17 @@ export const BtnGeneral = styled.button`
   outline: none;
   border: 1px solid ${theme.primary.neutral200};
   font-size: 1rem;
-  background-color: ${theme.primary.turquoise};
+  background-color: white;
   color: ${theme.primary.neutral650};
   box-shadow: 3px 3px 3px -1px rgba(0, 0, 0, 0.43);
   display: inline-block;
-
+  border: 1px solid black;
+  transition: all 0.2s ease;
   &:hover {
-    background-color: #fff;
-    color: ${theme.primary.turquoise};
     border: 1px solid ${theme.primary.turquoise};
+
+    background-color: ${Theme.secondary.azulBrillante};
+    text-decoration: underline;
   }
 
   &:active {
@@ -192,3 +196,40 @@ export const Opciones = styled.option`
     autoComplete="off"
   />
 </CajaInput>;
+
+export const Enlace2 = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  margin: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  border-radius: 5px;
+  min-width: 100px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  box-shadow: 3px 3px 3px -1px rgba(0, 0, 0, 0.43);
+  display: inline-block;
+  min-height: 30px;
+
+  background-color: white;
+  color: black;
+  &:focus {
+    background-color: ${Theme.primary.rojoCalido};
+    color: black;
+  }
+
+  &:hover {
+    background-color: ${Theme.secondary.azulBrillante};
+  }
+  &:active {
+    background-color: ${Theme.secondary.coralCalido};
+    color: black;
+  }
+`;

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Theme, theme } from "../config/theme";
 import { Link } from "react-router";
-import { BtnGeneral } from "./ElementosGenerales";
+import { BtnGeneral, Enlace2 } from "./ElementosGenerales";
 import ImgSheetrock from "./../../public/img/servicios/paneles-de-yeso.png";
 import ImgTienda from "./../../public/img/servicios/tienda.png";
 import ImgPanel2 from "./../../public/img/servicios/paneles-de-yeso2.png";
@@ -140,7 +140,7 @@ export default function Servicios() {
             </CajaCopy>
             <CajaBoton>
               <Enlace2 target="_blank" to={generaLinkWA(service.nombre)}>
-                Mas info
+                Mas info.
               </Enlace2>
             </CajaBoton>
           </Card>
@@ -227,36 +227,3 @@ const TextoCopy = styled.p`
 `;
 const CajaBoton = styled.div``;
 const BtnSimple = styled(BotonGeneral)``;
-const Enlace2 = styled(Enlace)`
-  margin: 10px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-
-  border-radius: 5px;
-  min-width: 100px;
-  padding: 8px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  box-shadow: 3px 3px 3px -1px rgba(0, 0, 0, 0.43);
-  display: inline-block;
-  min-height: 30px;
-
-  background-color: white;
-  color: black;
-  &:focus {
-    background-color: ${Theme.primary.rojoCalido};
-    color: black;
-  }
-
-  &:hover {
-    background-color: #fff;
-    background-color: ${Theme.secondary.azulBrillante};
-    color: ${Theme.primary.rojoCalido};
-  }
-  &:active {
-    background-color: ${Theme.secondary.coralCalido};
-    color: black;
-  }
-`;
