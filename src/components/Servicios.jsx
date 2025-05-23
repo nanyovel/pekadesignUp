@@ -98,10 +98,10 @@ export default function Servicios() {
     return { antes, palabra, despues };
   }
   const generaLinkWA = (servicio) => {
-    const apiWhatsApp =
-      "https://api.whatsapp.com/send?phone=+18099732098&text=";
+    const tel = "8097773423";
+    const apiWhatsApp = `https://api.whatsapp.com/send?phone=+1${tel}&text=`;
     const textoSaludo =
-      "Hola equipo de Sara Pet Shop, me interesa su servicio de ";
+      "Hola equipo de Pekas Design, me interesa su servicio de ";
     return apiWhatsApp + encodeURIComponent(textoSaludo + servicio) + ".";
   };
   const serviciosParsed = Services.map((item) => {

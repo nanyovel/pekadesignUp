@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import React from "react";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 
 export const BtnGeneral = styled.button`
   margin: 5px;
@@ -51,7 +51,7 @@ export const BtnGeneral = styled.button`
   }
 `;
 export const TituloSeccion = styled.h2`
-  color: ${theme.primary.turquoiseTenue};
+  color: ${Theme.primary.azulPeka};
   width: 100%;
   text-align: center;
   font-size: 2.5rem;

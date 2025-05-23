@@ -97,11 +97,11 @@ export default function Header({ userMaster, absolute }) {
                 </Enlaces>
               </NavItem>
 
-              {/* <NavItem>
+              <NavItem>
                 <Enlaces className={"menu"} to={"/contactos"}>
                   Contactos
                 </Enlaces>
-              </NavItem> */}
+              </NavItem>
               {/* <NavItem>
                 <Enlaces className={"menu"} to={"/nosotros"}>
                   Sobre nosotros

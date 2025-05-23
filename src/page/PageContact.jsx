@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 import FormContact from "../components/FormContact";
 import ImgCarta from "../../public/img/carta.png";
 import { TituloSeccion } from "../components/ElementosGenerales";
@@ -12,9 +12,14 @@ export default function PageContact({ userMaster }) {
     <>
       <Header />
       <CajaPrincipal>
+        <br />
+        <br />
         <CajaTitulo>
           <TituloSimple>Envianos un mensaje</TituloSimple>
-          <Subtitulo>Nos interesa saber lo que tienes que decir</Subtitulo>
+          <Subtitulo>
+            Hablemos de tu próxima idea; diseñamos soluciones, empezando por
+            escucharte.
+          </Subtitulo>
         </CajaTitulo>
         <WrapContenido>
           <FormContact userMaster={userMaster} />
@@ -61,8 +66,9 @@ const CajaTitulo = styled.div`
 
 const Subtitulo = styled.h3`
   color: ${theme.secondary.coral};
+  color: ${Theme.primary.verdePeka};
   font-size: 1.4rem;
-  text-decoration: underline;
+  font-weight: 400;
   text-align: center;
   width: 100%;
 `;

@@ -8,6 +8,7 @@ import AvisoTop from "../components/AvisoTop";
 import { sendEmailVerification } from "firebase/auth";
 
 import MenuLateral from "../components/MenuLateral";
+import PageContact from "../page/PageContact";
 
 export default function MasterRoutes({ setDBUsuarios, dbUsuarios }) {
   const confirmarEmail = () => {};
@@ -17,10 +18,7 @@ export default function MasterRoutes({ setDBUsuarios, dbUsuarios }) {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* <Route
-          path="/contactos/"
-          element={<PageContact />}
-        /> */}
+        <Route path="/contactos/" element={<PageContact />} />
         {/* <Route
           path="/admin/*"
           element={

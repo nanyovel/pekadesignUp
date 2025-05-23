@@ -52,7 +52,7 @@ export default function Home() {
       rol: "Gerente Coca Cola",
       nombre: "Daniel Ramos",
       texto:
-        "Trabajar con Peka Design fue una experiencia excepcional. Supieron interpretar exactamente lo que queríamos y lo llevaron a otro nivel. Su atención al detalle, la estética y la funcionalidad fue impresionante.",
+        "Trabajar con Pekas Design fue una experiencia excepcional. Supieron interpretar exactamente lo que queríamos y lo llevaron a otro nivel. Su atención al detalle, la estética y la funcionalidad fue impresionante.",
     },
     {
       puntuacion: 5,
@@ -60,7 +60,7 @@ export default function Home() {
       rol: "Propietaria Cielos Acusticos",
       nombre: "Yaritza Martinez",
       texto:
-        "La innovación y el profesionalismo de Peka Design superaron nuestras expectativas. Nos acompañaron durante todo el proceso con una comunicación clara y soluciones creativas. Sin duda, volveríamos a elegirlos.",
+        "La innovación y el profesionalismo de Pekas Design superaron nuestras expectativas. Nos acompañaron durante todo el proceso con una comunicación clara y soluciones creativas. Sin duda, volveríamos a elegirlos.",
     },
     {
       puntuacion: 4,
@@ -68,7 +68,7 @@ export default function Home() {
       rol: "Director UASD",
       nombre: "Angelo Sosa",
       texto:
-        "Desde el primer contacto, sentimos que nuestro proyecto estaba en buenas manos. El equipo de Peka Design no solo cumplió con los tiempos y el presupuesto, sino que nos entregó un resultado espectacular. Totalmente recomendados.",
+        "Desde el primer contacto, sentimos que nuestro proyecto estaba en buenas manos. El equipo de Pekas Design no solo cumplió con los tiempos y el presupuesto, sino que nos entregó un resultado espectacular. Totalmente recomendados.",
     },
   ];
   // const user = useAuth();
@@ -85,7 +85,7 @@ export default function Home() {
           </ContainerHero>
           <CajaTitulo>
             <TituloH1>
-              Peka
+              Pekas
               <Span>Design</Span>
             </TituloH1>
             <Subtitulo>Diseños acusticos</Subtitulo>
@@ -109,7 +109,7 @@ export default function Home() {
                 <TituloLess>¿Quienes somos?</TituloLess>
                 <br />
                 <Parrafo>
-                  En <b>Peka Design</b> somos una empresa de diseño y
+                  En <b>Pekas Design</b> somos una empresa de diseño y
                   construcción que nace con una visión clara: transformar
                   espacios a través de la creatividad, la tecnología y el
                   detalle. Nuestro enfoque combina la sensibilidad artística del
@@ -124,8 +124,8 @@ export default function Home() {
                   una fachada impactante hasta un interior cuidadosamente
                   diseñado, cada obra refleja nuestra pasión por superar
                   expectativas y construir soluciones que perduren en el tiempo.
-                  En <b>Peka Design</b> , no solo diseñamos estructuras: creamos
-                  experiencias espaciales pensadas para el futuro.
+                  En <b>Pekas Design</b> , no solo diseñamos estructuras:
+                  creamos experiencias espaciales pensadas para el futuro.
                 </Parrafo>
                 <br />
               </CajaInterna>
@@ -142,7 +142,7 @@ export default function Home() {
                 <TituloLess>¿Por que elegirnos?</TituloLess>
                 <br />
                 <Parrafo>
-                  En <b>Peka Design</b> no solo ejecutamos proyectos, los
+                  En <b>Pekas Design</b> no solo ejecutamos proyectos, los
                   interpretamos, los pensamos contigo y los llevamos más allá de
                   lo esperado. Nos destacamos por integrar diseño, innovación y
                   tecnología en cada etapa del proceso, asegurando resultados
@@ -157,7 +157,7 @@ export default function Home() {
                   apasionado por lo que hace. Nos adaptamos a las nuevas
                   tendencias, utilizamos herramientas de vanguardia y mantenemos
                   una comunicación cercana para que cada proyecto fluya con
-                  claridad y confianza. En <b>Peka Design</b> , hacemos de cada
+                  claridad y confianza. En <b>Pekas Design</b> , hacemos de cada
                   espacio una expresión auténtica de quienes lo habitan.
                 </Parrafo>
                 <br />
@@ -176,7 +176,7 @@ export default function Home() {
               <CajaParallax></CajaParallax>
               <BarraParallax className="top">
                 <TituloParallax>
-                  Peka Design: Donde la creatividad se encuentra con la
+                  Pekas Design: Donde la creatividad se encuentra con la
                   tecnología.
                 </TituloParallax>
               </BarraParallax>
@@ -709,7 +709,6 @@ const CajaParallax = styled.div`
   height: 90vh;
   width: 100%;
   position: absolute;
-  border: 1px solid red;
   left: 0;
   background-image: url(${ImgKitheMajes});
   /* Ajuste del fondo */
