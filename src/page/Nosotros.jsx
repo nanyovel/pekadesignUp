@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../config/theme";
+import { Theme, theme } from "../config/theme";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TituloH1 } from "../components/ElementosGenerales";
@@ -13,155 +13,185 @@ import ImgMujerPlaya from "./../../public/img/mujerPlaya.svg";
 import Carrusel from "../components/Carrusel";
 import CardPropiedades from "../components/CardPropiedades";
 import IMGWORKSVG from "./../../public/img/workSVG.svg";
+import ImgDi1 from "./../../public/img/quienesSomos/grama.jpeg";
+import ImgDi2 from "./../../public/img/quienesSomos/grama2.jpeg";
+import ImgDi3 from "./../../public/img/quienesSomos/tennis.jpeg";
 
 export default function Nosotros() {
   return (
     <>
       <Header />
       <CajaContenido>
-        <Titulo>Sobre nosotros</Titulo>
+        <Titulo>Acerca de Pekas Design</Titulo>
         <Subtitulo>Conocemos un poco mas</Subtitulo>
         <WrapTextoImg>
           <CajaInterna className="texto">
-            <TituloLess>¿Quienes somos?</TituloLess>
+            <TituloLess>Nuestra historia</TituloLess>
             <br />
             <Parrafo>
-              En <b>Break Koi,</b> ofrecemos una colección exclusiva de villas
-              en <b>Punta Cana,</b> diseñadas para brindar lujo, seguridad y
-              comodidad en un entorno paradisíaco. Nos apasiona crear
-              experiencias únicas para nuestros huéspedes, con alojamientos
-              elegantes y servicios personalizados que garantizan una estadía
-              inolvidable. Nuestro compromiso es seguir creciendo y adquiriendo
-              nuevas propiedades para ofrecer siempre lo mejor en hospitalidad.
+              <b>Pekas Design</b> nace en el 2018 del deseo de un grupo de
+              constructores, diseñadores y visionarios apasionados por
+              transformar espacios en experiencias. Desde nuestros inicios, nos
+              propusimos combinar funcionalidad y estética para crear ambientes
+              que no solo se vean bien, sino que también suenen bien.
             </Parrafo>
             <br />
             <Parrafo>
-              Más que un destino, <b>Break Koi,</b> es un espacio donde la
-              exclusividad se combina con un trato cercano y amigable. Nos
-              enfocamos en la seguridad, el confort y la atención personalizada,
-              asegurando que cada huésped se sienta como en casa. Nuestro
-              objetivo es construir relaciones a largo plazo, creando momentos
-              memorables que hagan de cada visita una experiencia para repetir.
+              Con una sólida trayectoria en el sector de la construcción,
+              identificamos una necesidad creciente en el mercado: espacios
+              hermosos, pero acústicamente ineficientes. Así surge nuestra
+              propuesta integral, donde el diseño interior se une con soluciones
+              acústicas personalizadas para hogares, oficinas, estudios de
+              grabación, locales comerciales y todo tipo de espacios que
+              requieran confort visual y sonoro.
+            </Parrafo>
+            <br />
+            <Parrafo>
+              A lo largo de los años, <b>Pekas Design</b> ha evolucionado hasta
+              convertirse en una marca referente en diseño sensorial. Nuestro
+              compromiso con la calidad, la innovación y la satisfacción del
+              cliente nos ha llevado a participar en proyectos en todo el país,
+              siempre guiados por una visión clara: crear espacios que inspiren.
+              Hoy, seguimos creciendo, aprendiendo y diseñando con la misma
+              pasión que nos impulsó desde el primer día.
             </Parrafo>
             <br />
           </CajaInterna>
           <CajaInterna className="cajaImg">
-            <Img src={ImgWorkRead} />
-            <CajaHover className="hover">
-              Somos una excelente opcion de alquileres vacacionales en Punta
-              Cana.
-            </CajaHover>
+            <Img src={ImgDi1} />
+            <CajaHover className="hover"></CajaHover>
+            <TituloInternoHover className="texto">
+              Innovacion y estetica.
+            </TituloInternoHover>
           </CajaInterna>
         </WrapTextoImg>
         <WrapTextoImg className="reverse">
           <CajaInterna className="texto">
-            <TituloLess>¿Por que elegirnos?</TituloLess>
+            <TituloLess>Factores diferenciadores</TituloLess>
             <br />
             <Parrafo>
-              En <b>Break Koi,</b> combinamos lujo, seguridad y hospitalidad
-              para ofrecerte una experiencia inigualable en Punta Cana. Nuestras
-              villas elegantes y exclusivas están diseñadas para brindarte el
-              máximo confort, con espacios cuidadosamente decorados y amenidades
-              de primera clase. Además, garantizamos privacidad y tranquilidad
-              en un entorno paradisíaco, ideal para quienes buscan una escapada
-              perfecta.
+              En Pekas Design no solo diseñamos espacios; transformamos
+              experiencias. Lo que nos distingue va mucho más allá del diseño y
+              la acústica. Nuestra esencia se basa en principios firmes y una
+              visión clara de lo que debe ser una empresa comprometida con el
+              futuro.
             </Parrafo>
             <br />
             <Parrafo>
-              Nos distinguimos por nuestro trato personalizado y atención
-              cercana a cada huésped. En <b>Break Koi,</b> no solo te ofrecemos
-              un lugar donde hospedarte, sino un servicio cálido y amigable que
-              hará que te sientas como en casa. Queremos construir relaciones a
-              largo plazo, asegurándonos de que cada visita sea una experiencia
-              única que siempre querrás repetir.
+              <b> Innovación constante:</b>
+              <br />
+              Nos mantenemos a la vanguardia, integrando tecnologías de última
+              generación en cada etapa del proceso. Desde software especializado
+              para modelado acústico hasta soluciones sostenibles de diseño
+              interior, apostamos por herramientas que nos permiten ofrecer
+              resultados más precisos, eficientes y adaptados a las necesidades
+              actuales.
+            </Parrafo>
+            <br />
+            <Parrafo>
+              <b> Responsabilidad por encima de las ganancias:</b>
+              <br />
+              Asumimos cada proyecto como si fuera propio. Nos involucramos a
+              fondo, escuchamos activamente a nuestros clientes y cuidamos cada
+              detalle para garantizar resultados excepcionales. No trabajamos
+              con prisa, sino con propósito.
+            </Parrafo>
+            <br />
+            <Parrafo>
+              <b> Relación a largo plazo:</b>
+              <br />
+              Nuestra meta no es solo ejecutar un proyecto, sino construir una
+              relación duradera. Muchos de nuestros clientes vuelven a elegirnos
+              porque saben que respondemos, acompañamos y mejoramos
+              continuamente.
+            </Parrafo>
+            <br />
+            <Parrafo>
+              <b> Diseño con propósito:</b>
+              <br />
+              Cada propuesta nace del análisis, la funcionalidad y la
+              sensibilidad estética. Diseñamos para el oído, para la vista y
+              para el bienestar de las personas que habitarán esos espacios.
             </Parrafo>
             <br />
           </CajaInterna>
           <CajaInterna className="cajaImg">
-            <Img src={IMGWORKSVG} />
-            <CajaHover className="hover">
-              Somos una excelente opcion de alquileres vacacionales en Punta
-              Cana.
-            </CajaHover>
+            <Img src={ImgDi2} />
+            <CajaHover className="hover"></CajaHover>
+            <TituloInternoHover className="texto">
+              Diseño con proposito
+            </TituloInternoHover>
           </CajaInterna>
         </WrapTextoImg>
 
         <WrapTextoImg className="reverse">
+          <CajaInterna className="cajaImg">
+            <Img src={ImgDi3} className="vertical" />
+            <CajaHover className="hover"></CajaHover>
+            <TituloInternoHover className="texto">
+              Responsabilidad
+            </TituloInternoHover>
+          </CajaInterna>
           <CajaInterna className="texto">
             <TituloLess>Mision</TituloLess>
-            <br />
             <Parrafo>
-              Brindar experiencias inolvidables a nuestros clientes mediante el
-              alquiler de villas exclusivas en Punta Cana. Nos enfocamos en
-              ofrecer comodidad, lujo y privacidad en entornos paradisíacos,
-              creando el ambiente perfecto para unas vacaciones de ensueño.
+              Diseñar y transformar espacios con soluciones integrales de
+              interiorismo y acústica, combinando creatividad, tecnología y
+              funcionalidad para mejorar la calidad de vida de nuestros
+              clientes, siempre con un alto nivel de compromiso, responsabilidad
+              y excelencia.
             </Parrafo>
             <br />
-            <Parrafo>
-              Nos comprometemos a proporcionar un servicio personalizado y de
-              alta calidad, atendiendo cada detalle para que nuestros huéspedes
-              se sientan como en casa y disfruten al máximo de su estadía.
-            </Parrafo>
             <br />
 
             <TituloLess>Vision</TituloLess>
-            <br />
             <Parrafo>
-              Ser la opción líder en alquiler de villas en Punta Cana,
-              reconocidos por nuestra excelencia en el servicio y nuestra
-              capacidad de crear experiencias únicas y memorables. Aspiramos a
-              expandir nuestro portafolio de propiedades exclusivas, manteniendo
-              siempre un alto estándar de calidad y confort.
+              Ser la empresa líder en diseño interior y soluciones acústicas en
+              la región, reconocida por su innovación, profesionalismo y enfoque
+              humano. Aspiramos a redefinir la forma en que las personas viven,
+              trabajan y experimentan los espacios, creando ambientes que
+              inspiran y conectan.
             </Parrafo>
             <br />
-            <Parrafo>
-              Nos esforzamos por ser referentes en hospitalidad, innovación y
-              atención al cliente, construyendo relaciones duraderas basadas en
-              la confianza y la satisfacción de nuestros huéspedes.
-            </Parrafo>
             <br />
 
             <TituloLess>Valores</TituloLess>
-            <br />
             <Lista>
               <Elemento>
-                <b>Calidad y Excelencia: </b> Nos comprometemos a ofrecer el más
-                alto estándar en cada una de nuestras villas y servicios.
-                Cuidamos cada detalle para garantizar una experiencia impecable.
+                <b>Innovación: </b> Apostamos a la mejora continua, incorporando
+                tecnología y nuevas ideas para ofrecer soluciones creativas y
+                eficientes.
               </Elemento>
               <Elemento>
                 {" "}
-                <b>Compromiso con el Cliente: </b>Trabajamos con pasión y
-                dedicación para superar las expectativas de nuestros huéspedes,
-                asegurándonos de que cada visita sea única y memorable.
+                <b>Responsabilidad: </b>Actuamos con ética, transparencia y
+                conciencia social, priorizando el cumplimiento y la calidad por
+                encima del beneficio económico.
               </Elemento>
               <Elemento>
                 {" "}
-                <b>Confianza y Transparencia: </b> Construimos relaciones
-                sólidas y transparentes con nuestros clientes, brindándoles
-                seguridad y tranquilidad durante todo el proceso de reserva y
-                estadía.
+                <b>Compromiso: </b> Nos involucramos profundamente en cada
+                proyecto, asumiendo con seriedad cada reto y entregando
+                resultados que superan expectativas.
               </Elemento>
               <Elemento>
                 {" "}
-                <b>Hospitalidad y Calidez: </b> Nos esforzamos por crear un
-                ambiente acogedor, brindando un servicio amable, cercano y
-                personalizado que haga sentir a nuestros huéspedes como en casa.
+                <b>Calidad: </b> Cuidamos cada detalle y exigimos lo mejor en
+                cada etapa del proceso, desde el diseño hasta la ejecución.
               </Elemento>
               <Elemento>
                 {" "}
-                <b>Innovación y Mejora Continua: </b>Buscamos constantemente
-                nuevas formas de innovar y mejorar nuestros servicios para
-                adaptarnos a las necesidades y expectativas de nuestros
-                clientes.
+                <b>Empatía: </b>Escuchamos, entendemos y trabajamos junto a
+                nuestros clientes para crear espacios que respondan
+                verdaderamente a sus necesidades.
+              </Elemento>
+              <Elemento>
+                {" "}
+                <b>Trabajo en equipo: </b>Fomentamos un ambiente colaborativo,
+                donde el talento de cada miembro del equipo aporta valor y se
+                refleja en cada proyecto.
               </Elemento>
             </Lista>
-          </CajaInterna>
-          <CajaInterna className="cajaImg">
-            <Img src={ImgbilderClip} className="vertical" />
-            <CajaHover className="hover">
-              Tu refugio perfecto, Punta Cana.
-            </CajaHover>
           </CajaInterna>
         </WrapTextoImg>
       </CajaContenido>
@@ -193,7 +223,7 @@ const Titulo = styled(TituloH1)`
   }
 `;
 const Subtitulo = styled.h3`
-  color: ${theme.secondary.coral};
+  color: ${Theme.primary.verdePeka};
   font-size: 1.4rem;
   text-decoration: underline;
   text-align: center;
@@ -235,6 +265,14 @@ const CajaInterna = styled.div`
     &:hover .hover {
       transform: translateX(0%);
     }
+
+    &:hover .hover {
+      visibility: visible;
+      opacity: 0.8;
+    }
+    &:hover .texto {
+      left: 0;
+    }
     @media screen and (max-width: 970px) {
       width: 80%;
     }
@@ -273,12 +311,16 @@ const CajaHover = styled.div`
   height: 100%;
   position: absolute;
   font-weight: 600;
-  background-color: #dc143c8c;
   padding: 10px;
   left: 0;
   top: 0;
-  transform: translateX(100%);
-  transition: transform ease-in-out 0.3s;
+
+  background-color: #2ba58d9e;
+  transition: all ease-in-out 0.4s;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
 `;
 
 const CajaWave = styled.div`
@@ -294,11 +336,27 @@ const ImgWave = styled.img`
 `;
 const TituloLess = styled.h3`
   font-size: 1.8rem;
-  color: ${theme.secondary.coral};
+  color: ${Theme.primary.verdePeka};
 `;
 const Lista = styled.ul`
   padding-left: 20px;
 `;
 const Elemento = styled.li`
   margin-bottom: 15px;
+`;
+const TituloInternoHover = styled.h2`
+  color: white;
+  opacity: 1;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+  /* height: 100%; */
+  background-color: ${Theme.primary.azulPeka};
+  transition: 0.2s all ease;
+  text-align: center;
+  vertical-align: center;
+  align-content: center;
+  font-size: 2.4rem;
 `;

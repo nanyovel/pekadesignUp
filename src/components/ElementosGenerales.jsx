@@ -24,7 +24,6 @@ export const BtnGeneral = styled.button`
     border: 1px solid ${theme.primary.turquoise};
 
     background-color: ${Theme.secondary.azulBrillante};
-    text-decoration: underline;
   }
 
   &:active {
@@ -64,7 +63,7 @@ export const TituloSeccion = styled.h2`
   font-weight: normal;
 `;
 export const TituloH1 = styled.h1`
-  color: ${theme.primary.turquoiseTenue};
+  color: ${Theme.primary.azulPeka};
   width: 100%;
   text-align: center;
   font-size: 2.5rem;

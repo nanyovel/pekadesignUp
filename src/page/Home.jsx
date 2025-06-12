@@ -3,17 +3,18 @@ import styled from "styled-components";
 import { Theme, theme } from "../config/theme";
 import Header from "../components/Header";
 
-import ImgEstructura1 from "./../../public/img/hero/facade-7868160_640.jpg";
-import ImgEstructura2 from "./../../public/img/hero/statue-5597502_1280.jpg";
-import ImgEstructura3 from "./../../public/img/hero/steel-scaffolding-4459235_1280.jpg";
-import ImgEstructura4 from "./../../public/img/hero/indoor-3315464_1280.jpg";
-import ImgEstructura6 from "./../../public/img/hero/office-730681_1280.jpg";
-import ImgEstructura7 from "./../../public/img/hero/house-1477041_1280.jpg";
-import ImgEstructura8 from "./../../public/img/hero/hamburg-8573427_1280.jpg";
-import ImgKitchen from "./../../public/img/quienesSomos/kitchen-2165756_1280.jpg";
-import ImgHome from "./../../public/img/quienesSomos/home-2486092_1280.jpg";
-import ImgBuildingRect from "./../../public/img/quienesSomos/building-8373618_1920.jpg";
-import ImgKitheMajes from "./../../public/img/quienesSomos/kitchen-2400367_1920.jpg";
+// import ImgEstructura1 from "./../../public/img/hero/facade-7868160_640.jpg";
+// import ImgEstructura2 from "./../../public/img/hero/statue-5597502_1280.jpg";
+// import ImgEstructura3 from "./../../public/img/hero/steel-scaffolding-4459235_1280.jpg";
+// import ImgEstructura4 from "./../../public/img/hero/indoor-3315464_1280.jpg";
+// import ImgEstructura6 from "./../../public/img/hero/office-730681_1280.jpg";
+// import ImgEstructura7 from "./../../public/img/hero/house-1477041_1280.jpg";
+// import ImgEstructura8 from "./../../public/img/hero/hamburg-8573427_1280.jpg";
+import ImgKitchen from "./../../public/img/quienesSomos/home3.jpeg";
+import ImgHome from "./../../public/img/quienesSomos/homaCasa.jpeg";
+import ImgBuildingRect from "./../../public/img/quienesSomos/columnaImg.jpeg";
+//
+import ImgParallaxHome from "./../../public/img/quienesSomos/parallaxHome.jpeg";
 import Carrusel from "../components/Carrusel";
 import CardResennia from "../components/CardResennia";
 import RostroMujer1 from "./../../public/img/quienesSomos/woman-659352_640.jpg";
@@ -26,17 +27,29 @@ import { BtnGeneral } from "../components/ElementosGenerales";
 import { Villas } from "../DB/Villas";
 // import { useAuth } from "../context/AuthContext";
 import Servicios from "../components/Servicios";
+import ImgEstructura1 from "./../../public/img/slider/1.jpeg";
+import ImgEstructura2 from "./../../public/img/slider/2.jpeg";
+import ImgEstructura3 from "./../../public/img/slider/3.jpeg";
+import ImgEstructura4 from "./../../public/img/slider/4.jpeg";
+import ImgEstructura5 from "./../../public/img/slider/5.jpeg";
+import ImgEstructura6 from "./../../public/img/slider/6.jpeg";
+import ImgEstructura7 from "./../../public/img/slider/7.jpeg";
+import ImgEstructura8 from "./../../public/img/slider/8.jpeg";
+import ImgEstructura9 from "./../../public/img/slider/9.jpeg";
+import ImgEstructura10 from "./../../public/img/slider/10.jpeg";
 
 export default function Home() {
   const arrayImg = [
     ImgEstructura1,
-    ImgEstructura2,
+    // ImgEstructura2,
     ImgEstructura3,
     ImgEstructura4,
+    // ImgEstructura5,
     ImgEstructura6,
     ImgEstructura7,
     ImgEstructura8,
   ];
+
   const navigate = useNavigate();
   const goProperty = () => {
     navigate("/propiedades");
@@ -450,6 +463,7 @@ const CajaTitulo = styled.div`
     top: 30vh;
     min-height: auto;
   }
+  opacity: 0.9;
 `;
 const TituloH1 = styled.h1`
   font-size: 6rem;
@@ -710,7 +724,7 @@ const CajaParallax = styled.div`
   width: 100%;
   position: absolute;
   left: 0;
-  background-image: url(${ImgKitheMajes});
+  background-image: url(${ImgParallaxHome});
   /* Ajuste del fondo */
   background-attachment: fixed;
   background-position: center;

@@ -135,7 +135,9 @@ const TextArea = styled.textarea`
   min-height: 80px;
   resize: vertical;
 `;
-const BtnSimple = styled(BtnGeneral)``;
+const BtnSimple = styled(BtnGeneral)`
+  width: 150px;
+`;
 
 const Parrafo = styled.p`
   color: ${theme.primary.turquoise};

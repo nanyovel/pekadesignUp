@@ -96,17 +96,22 @@ export default function Header({ userMaster, absolute }) {
                   Home
                 </Enlaces>
               </NavItem>
-
+              <NavItem>
+                <Enlaces className={"menu"} to={"/servicios"}>
+                  Servicios
+                </Enlaces>
+              </NavItem>
               <NavItem>
                 <Enlaces className={"menu"} to={"/contactos"}>
                   Contactos
                 </Enlaces>
               </NavItem>
-              {/* <NavItem>
+
+              <NavItem>
                 <Enlaces className={"menu"} to={"/nosotros"}>
                   Sobre nosotros
                 </Enlaces>
-              </NavItem> */}
+              </NavItem>
             </NavList>
             {
               // !userMaster && (
